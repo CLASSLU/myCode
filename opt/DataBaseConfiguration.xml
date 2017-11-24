@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd " 
+	>
+	
+	<context:annotation-config />
+	
+	<!-- 达梦数据源定义 -->
+	<bean id="DMDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="dm.jdbc.driver.DmDriver" />
+		<property name="url" value="jdbc:dm://127.0.0.1/STUDY"/>  
+		<property name="username" value="SYSDBA" />
+		<property name="password" value="SYSDBA" />
+		<property name="maxActive" value="50" />
+		<property name="maxIdle" value="20" />
+	</bean>
+
+	<!-- JDBC 事务管理器定义 -->
+ 	<bean name="JdbcTransactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="DMDataSource" />
+	</bean>
+	<tx:annotation-driven transaction-manager="JdbcTransactionManager"
+		proxy-target-class="true" />
+		
+	
+</beans>	
+	

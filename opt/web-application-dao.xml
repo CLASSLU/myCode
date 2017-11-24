@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:flex="http://www.springframework.org/schema/flex"
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/util 
+       classpath:org/springframework/beans/factory/xml/spring-util-2.5.xsd
+       http://www.springframework.org/schema/context
+       classpath:org/springframework/context/config/spring-context-2.5.xsd
+       http://www.springframework.org/schema/jee 
+       classpath:org/springframework/ejb/config/spring-jee-2.5.xsd
+       http://www.springframework.org/schema/beans
+       classpath:org/springframework/beans/factory/xml/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop
+       classpath:org/springframework/aop/config/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/tx
+       classpath:org/springframework/transaction/config/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/flex
+       classpath:org/springframework/flex/config/xml/spring-flex-1.0.xsd">       
+	 <!-- 系统管理 -->
+	 <bean id="orgDao" class="kd.idp.psidpapp.opt.sys.org.dao.OrgDao"/>
+	 <!-- 菜单 -->
+	 <bean id="menuDao" class="kd.idp.psidpapp.opt.sys.menu.dao.MenuDao"/>
+	 <!-- 序列 -->
+	 <bean id="serialDao" class="kd.idp.psidpapp.opt.sys.serial.dao.SerialDao"/>
+	 <!-- 用户 -->
+	 <bean id="userDao" class="kd.idp.psidpapp.opt.sys.user.dao.UserDao"/>
+	 <!-- 角色 -->
+	 <bean id="roleDao" class="kd.idp.psidpapp.opt.sys.role.dao.RoleDao"/>
+ 
+	 
+	 
+	 <!-- 操作票 -->
+	 <bean id="ticketDao" class="kd.idp.psidpapp.opt.ticket.dao.TicketDao"/>
+	 <!-- 操作令 -->
+	 <bean id="orderDao" class="kd.idp.psidpapp.opt.ticket.dao.OrderDao"/>
+	 <!-- 操作项 -->
+	 <bean id="itemDao" class="kd.idp.psidpapp.opt.ticket.dao.ItemDao"/>
+	 <!-- 受票信息 -->
+	 <bean id="recvTicketDao" class="kd.idp.psidpapp.opt.ticket.dao.RecvTicketDao"/>	
+	 <!-- 操作单位 -->
+	 <bean id="optOrgDao" class="kd.idp.psidpapp.opt.ticket.dao.OptOrgDao"/>	
+	 <!-- 操作票查询 -->
+	 <bean id="ticketSearchDao" class="kd.idp.psidpapp.opt.ticket.dao.TicketSearchDao"/>
+	 <bean id="ttDao123" class="kd.idp.psidpapp.opt.ticket.dao.TTDao"/>
+</beans>
